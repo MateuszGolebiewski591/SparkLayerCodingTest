@@ -11,7 +11,7 @@ type TODO struct {
 	Description string
 }
 
-var TODOList = []TODO{{"test1", "thing1"}}
+var TODOList = []TODO{}
 
 // Use of a mutex lock prevents data from being updated and read at the same time
 var lock sync.Mutex
@@ -42,7 +42,6 @@ func GetTODOListHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Server Error", http.StatusInternalServerError)
 	}
 	lock.Unlock()
-	w.WriteHeader(200)
 }
 
 func UpdateTODOListHandler(w http.ResponseWriter, r *http.Request) {

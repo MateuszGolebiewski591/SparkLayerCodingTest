@@ -2,16 +2,16 @@ import React from 'react';
 import './App.css';
 
 export type TodoType = {
-  title: string,
-  description: string,
+  Title: string,
+  Description: string,
 }
 
-function Todo({ title, description }: TodoType) {
+function Todo({ Title, Description }: TodoType) {
   return (
     <div className="todo">
       <div className="todo-details">
-        <p className="todo-title">{title}</p>
-        <p className="todo-description">{description}</p>
+        <p className="todo-title">{Title}</p>
+        <p className="todo-description">{Description}</p>
       </div>
     </div>
   );
