@@ -16,6 +16,9 @@ var TODOList = []TODO{}
 // Use of a mutex lock prevents data from being updated and read at the same time
 var lock sync.Mutex
 
+/*This is not needed for a single-client implementation but I added it as it would server as a start for scaling up the app to
+take multiple clients and store all of their data together.*/
+
 func main() {
 	http.HandleFunc("/", ToDoListHandler)
 	http.ListenAndServe(":8080", nil)
